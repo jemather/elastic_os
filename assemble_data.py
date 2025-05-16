@@ -4,8 +4,6 @@ import polars as pl
 import numpy as np
 
 
-BASE_FOLDER = '/Users/math0231/Desktop/elastic/'
-
 meat_types = ['beef', 'chicken', 'pork', 'pig', 'lamb', 'bison', 'duck', 'turkey',
 	 'goat', 'rabbit', 'venison', 'goose', 'veal', 'fish']
 	
