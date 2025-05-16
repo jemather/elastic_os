@@ -39,7 +39,8 @@ purchases['year'] = purchases['date'].dt.year
 purchases['month'] = purchases['date'].dt.month
 purchases['quarter'] = purchases['date'].dt.quarter
 
-targets = pd.read_excel("Template_Results_250303.xlsx")	
+targets = pd.read_excel("Template_Estimates.xlsx")	
+targets = targets.drop(1).reset_index() # drop blank first row
 targets['target'] = 1	
 targets['Brand Name'] = targets['Brand Name'].str.strip()
 targets['Country'] = targets['Country'].str.strip()
@@ -157,7 +158,11 @@ purchases_treated = purchases_treated.merge(treatments_7days.to_pandas(),
 # fill in the NAs
 purchases_treated[purchases_treated.columns[20:]] = purchases_treated[purchases_treated.columns[20:]].fillna(0)
 
+purchases_treated['day_of_month'] = purchases_treated['date'].dt.day
+purchases_treated['day_of_week'] = purchases_treated['date'].dt.dayofweek
+
+
 # off to stata to model
-purchases_treated.to_stata("/Users/math0231/Desktop/elastic/all_sales_recalls.dta")
+purchases_treated.to_stata("all_sales_recalls.dta")
 
 

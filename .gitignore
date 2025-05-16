@@ -1,1 +1,6 @@
 venv
+usda_recalls.parquet
+purchases.csv
+Template_Estimates.xlsx
+.gitignore
+all_sales_recalls
