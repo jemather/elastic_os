@@ -2,12 +2,6 @@
 
 Replication package for my analysis as part of the Elastic Open Science project
 
-## Description
-
-An in-depth paragraph about your project and overview of use.
-
-## Getting Started
-
 ### Dependencies
 
 * Python
